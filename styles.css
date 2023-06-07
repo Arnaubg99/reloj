@@ -1,0 +1,53 @@
+html{
+    font-size: 10px;
+}
+body{
+    font-size: 2rem;
+    height: 100vh;
+    background: linear-gradient(#12d3e8, #ffffff);
+    margin: 0;
+}
+.reloj-container{
+    width: 30rem;
+    height: 30rem;
+    border: 20px solid #ffffff;
+    background-image: url('./assets/reloj.png');
+    background-size:cover;
+    background-position: 50%;
+    border-radius: 50%;
+    margin: 50px auto;
+}
+.reloj{
+    position: relative;
+    height: 100%;
+    width: 100%;
+    transform: translateY(-3px);
+
+}
+.aguja{
+    height: 6px;
+    background-color: #000000;
+    position: absolute;
+    top: 50%;
+    transform-origin: 100%;
+    transition: rotate(90deg);
+    transition: all 0.5s;
+    transition-timing-function: cubic-bezier(0.89, 1.14, 0, 0.91);
+}
+.flex-center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.aguja-hora{
+    width: 20%;
+    left:30%;
+}
+.aguja-minuto{
+    width: 35%;
+    left: 15%;
+}
+.aguja-segundo{
+    width: 45%;
+    left: 5%;
+}
