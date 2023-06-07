@@ -7,13 +7,13 @@ const hora = horaAct.getHours();
 const minutos = horaAct.getMinutes();
 const segundos = horaAct.getSeconds();
 
-const horaGrados = ((hora / 60) * 360 - 30);
+const horaGrados = ((hora / 12) * 360 + 90);
 const minutosGrados = ((minutos / 60) * 360 + 90);
 const segundosGrados = ((segundos / 60) * 360 + 90);
 
-animacionEnPunto(horaGrados, 90, agujaHora);
-animacionEnPunto(minutosGrados, 90, agujaMinuto);
-animacionEnPunto(segundosGrados, 90, agujaSegundo);
+animacionEnPunto(horaGrados, agujaHora);
+animacionEnPunto(minutosGrados, agujaMinuto);
+animacionEnPunto(segundosGrados, agujaSegundo);
 
 
 agujaHora.style.transform = `rotate(${horaGrados}deg)`;
@@ -22,8 +22,8 @@ agujaSegundo.style.transform = `rotate(${segundosGrados}deg)`;
 }
 setInterval(establecerHora, 1000);
 
-function animacionEnPunto(grados, numGrados, aguja){
-    if(grados === numGrados){
+function animacionEnPunto(grados, aguja){
+    if(grados === 90){
         aguja.style.transition = '0s';
     }else{
         aguja.style.transition = 'all 0.5s'
